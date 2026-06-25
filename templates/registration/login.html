@@ -11,5 +11,9 @@
         {{ form|crispy }}
         <button class="btn btn-success ms-2" type="submit"> Log Me In! </button>
     </form>
-
+    <div class="text-center">
+    <p><a href="{% url 'password_reset' %}">Forgot your password?</a></p>
+    <small>You bring shame to your family.</small>
+    </div>
+    
  {% endblock content %}
