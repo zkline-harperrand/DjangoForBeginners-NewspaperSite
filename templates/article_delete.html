@@ -1,0 +1,16 @@
+<!-- templates/article_delete.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container" style="width: 70%; margin: 0 auto;">
+    <h1>Delete Article: {{ article.title }} </h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <p>Are you sure you wish to delete the <strong>truth?</strong></p>
+        <button class="btn btn-danger ms-2" type="submit">Aye Aye Captain.</button>
+        <small>Snarky comment about the article goes here</small>
+    </form>
+</div>
+
+{%  endblock content %}

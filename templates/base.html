@@ -29,7 +29,7 @@
                         <a class="nav-link px-2 link-dark" aria-current="page" href="#">Home</a> 
                     </li>
                     {% if user.is_authenticated %}
-                    <li><a href="#" class="nav-link px-2 link-dark">+ New Horror</a></li>
+                    <li><a href="{% url 'article_new' %}" class="nav-link px-2 link-dark">+ New Horror</a></li>
                 </ul>
                 <div class="mr-auto">
                     <ul class="navbar-nav">

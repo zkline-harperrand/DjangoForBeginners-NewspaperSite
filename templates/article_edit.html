@@ -1,0 +1,17 @@
+<!-- templates/article_edit.html-->
+
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container" style="width: 70%; margin: 0 auto;">
+<h2>Edit Article: {{ article.title }}</h2>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button class="btn btn-info ms-2" type="submit">Update Me</button>
+    <small style="margin-left: 20px; text-align: center;">Do it better next time</small>
+</form>
+</div>
+
+{% endblock content %}

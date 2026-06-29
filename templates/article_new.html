@@ -1,0 +1,16 @@
+<!-- templates/article_new.html -->
+
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+<h1>What New Horror Will You Bring?</h1>
+<form actions="" method="post" style="width: 70%; margin: 0 auto;">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button class="btn btn-success ms-2" type="submit">Save</button>
+</form>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,20 @@
+<!-- templates/article_detail.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="article-entry" style="width: 70%; margin: 0 auto;">
+    <h2>{{ article.title }}</h2>
+    <p>by {{ article.author }} | {{ article.date }}</p>
+    <p> {{ article.body }} </p>
+</div>
+<div>
+    <div class="card-footer text-center text-muted">
+        <a href="{% url 'article_edit' article.pk %}">Change the Future</a> | 
+        <a href="{% url 'article_delete' article.pk %}">Delete the Past</a>
+        <p>Go Back to <a href="{% url 'article_list' %}">All Articles</a></p>
+    </div>
+</div>
+
+{% endblock content %}
