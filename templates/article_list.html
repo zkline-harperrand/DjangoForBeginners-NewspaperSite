@@ -19,8 +19,21 @@
     <div class="card-footer text-center text-muted">
         {% if article.author.pk == request.user.pk %}
         <a href="{% url 'article_edit' article.pk %}">Change the Future</a> | 
-        <a href="{% url 'article_delete' article.pk %}">Delete the Past</a>
+        <a href="{% url 'article_delete' article.pk %}">Delete the Past</a> |
         {% endif %}
+        <a href="{{ article.get_absolute_url }}">Comment Ragebait</a>
+    </div>
+    <div class="card-footer">
+        <p style="text-align: right;">Comments: {{ article.comment_set.all.count}}</p>
+        {% for comment in article.comment_set.all %}
+        <p>
+            <span class="fw-bold"> 
+                {{ comment.author }} &middot;
+            </span>
+            {{ comment.comment}}
+        </p>
+        <hr />
+        {% endfor %}
     </div>
 </div>
 <br />
